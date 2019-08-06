@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<hr class="separation">
+
+
+<div class="espace"></div>
+<div class="espace"></div>
+
+<center>
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+
+            <a href="{{ path('ajouter_personne')}}"><button type="button" class="btn btn-primary onglet2"> Créer un nouvel utilisateur </button></a>
+
+        </div>        
+    </div>
+
+    <div class="espace"></div>
+    <div class="espace"></div>
+
+    <h3> Liste des utilisateurs </h3>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+
+                <table id="personnes">
+                    <thead>
+                        <tr class="fond_tableau">
+                            <th> Nom </th>
+                            <th> Prenom </th>
+                            <th> Mail </th>
+                            <th> N° de rue </th>
+                            <th> Rue </th>
+                            <th> Ville </th>
+                            <th> Code Postal </th>
+                            <th> Société </th>
+                            <th> N° du Badge </th>
+                            <th> Statut </th>
+                            <th> Modifier </th>
+                            <th> Supprimer </th>
+                        </tr>
+                        </thread>
+
+                    <tbody>
+                        {% for personne in personnes %}
+                        <tr>
+
+                            <td>{{ personne.nom }}</td>
+
+                            <td>{{ personne.prenom }}</td>
+
+                            <td>{{ personne.mail }}</td>
+
+                            <td>{{ personne.numeroRue }}</td>
+
+                            <td>{{ personne.rue }}</td>
+
+                            <td>{{ personne.ville }}</td>
+
+                            <td>{{ personne.codePostal }}</td>
+
+                            <td>{{ personne.societe }}</td>
+
+                            <td>{{ personne.codeBadge }}</td>
+
+                            <td>{{ personne.idStatus }}</td>
+
+                            <td> 
+                            <a href="{{ path('modifier_personne', {'id':personne.idPersonne})}}"><img class="modif" src="/images/engrenage.png"></a>
+                            </td>
+
+                            <td>
+                            <a href="{{ path('supprimer_personne',{'id':personne.idPersonne})}}" class="delete-personne" onclick="return confirm('Voulez-vous vraiment supprimer cet utilisateur?');"><img class="croix delete-personne" src="/images/croix.png"></a>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}

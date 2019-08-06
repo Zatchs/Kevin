@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../style/css/index.css">
+</head>
+
+{% block body %}
+
+<div class="espace"></div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <img class="logo_facture" src="/images/logo.jpg">
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-end droite">
+            <p> FACTURE n° </p>
+        </div>
+    </div>
+</div>
+
+<hr class="simple">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12 gauche">
+        {{ currentTime }}
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12 droite">
+            <p> 100,00 € </p>
+        </div>
+    </div>
+</div>
+
+<hr class="double">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12 gauche">
+            <p> RIMBAUD'TECH</p>
+            <p> 6 Place de la gare</p>
+            <p> 08000 Charleville-Mézières</p>
+        </div>
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12 droite">
+            <p> {{ personne.prenom }} {{ personne.nom }} </p>
+            <p> {{ personne.numeroRue }} {{ personne.rue }}</p>
+            <p> {{ personne.codePostal }} {{ personne.ville}}</p>
+            
+        </div>
+    </div>
+</div>
+
+<hr class="double">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-slef-center">
+            <h2> Objet : Paiement services et prestation d'hébergement </h2>
+        </div>
+    </div>
+</div>
+
+<div class="espace2"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-slef-center">
+
+            
+        </div>
+    </div>
+</div>
+
+<div class="espace2"></div>
+
+<hr class="double">
+
+<div class="espace2"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12 gauche">
+            <h3> INFORMATIONS SUR LE PAIEMENT </h3>
+            <p> Nom du bénéficiaires : Rimbaud'Tech </p>
+            <p> Nom de la banque : CE LORRAINE CHAMPAGNE-ARDENNE </p>
+            <p> Numéro IBAN : FR76 1513 5205 9008 0008 0320 735</p>
+            <p>Numéro BIC : CEPAFRPP513</p>
+            <p>SIRET : 82172533000012</p>
+
+        </div>
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12 droite">
+        <h3> CONTACT ADMINISTRATIF </h3>
+            <p> Téléphone : 06 78 35 12 20 </p>
+            <p> www.rimbaud-tech.fr </p>
+        </div>
+    </div>
+</div>
+
+<div class="espace2"></div>
+
+<hr class="double">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<p class="paiement"> LE PAIEMENT DOIT ETRE EFFECTUE PAR VIREMENT OU PAR CHEQUE A L'ORDRE DE RIMBAUD'TECH</p>
+</div>
+</div>
+</div>
+
+<div class="espace2"></div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

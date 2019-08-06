@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <table>
+                    <thead>
+                        <tr class="fond_tableau">
+                            <th> Nom </th>
+                            <th> Prenom </th>
+                            <th> Mail </th>
+                            <th> Numero de la rue </th>
+                            <th> Rue </th>
+                            <th> Ville </th>
+                            <th> Code Postal </th>
+                            <th> Société </th>
+                            <th> Numero de Badge </th>
+                            <th> Statut </th>
+                            <th> Modifier </th>
+                        </tr>
+                        </thread>
+                        <tbody>
+                        {% for personne in personnes %}
+                        <tr>
+                            
+                            <td>{{ personne.nom }}</td>
+
+                            <td>{{ personne.prenom }}</td>
+
+                            <td>{{ personne.mail }}</td>
+
+                            <td>{{ personne.numeroRue }}</td>
+
+                            <td>{{ personne.rue }}</td>
+
+                            <td>{{ personne.ville }}</td>
+
+                            <td>{{ personne.codePostal }}</td>
+
+                            <td>{{ personne.societe }}</td>
+
+                            <td>{{ personne.codeBadge }}</td>
+
+                            <td>{{ personne.idStatus }}</td>
+
+                            <td> Modifier </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

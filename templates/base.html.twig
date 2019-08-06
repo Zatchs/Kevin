@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="../style/css/index.css">
+    <link rel="stylesheet" href="../../style/css/index.css">
+    <link rel="stylesheet" href="../../../style/css/index.css">
+    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../../js/main.js"></script>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+    
+
+    
+
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <h1><a class="navbar-brand gauche" href="/"><img class="logo" src="/images/logo.png"></a></h1>
+
+        <ul class="navbar-nav droite">
+            <li class="nav-item">
+                <a class="nav-link" href="/facture">Facturation de Rimbaud-Tech</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <div class="espace"></div>
+
+        <!-------------------------------------- ONGLETS SELECTION ------------------------------------>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <a href="/incubes"><button type="button" class="btn btn-primary onglet">INCUBES</button></a>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <a href="/non-adh"><button type="button" class="btn btn-primary onglet">NON-ADH</button></a>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                    <a href="/adh"><button type="button" class="btn btn-primary onglet">ADH</button></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="espace"></div>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <a href="/salle"><button type="button" class="btn btn-primary onglet">LOCATION SALLE</button></a>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <a href="/liste"><button type="button" class="btn btn-primary onglet">LISTE</button></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="espace"></div>
+
+
+        <div class="container-fluid">
+
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<center>
+    <h3> Utilisateur </h3>
+
+    <div class="espace2"></div>
+
+    <div class="row">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+            {{ personne.nom }} {{ personne.prenom }}, {{ personne.numeroRue }} {{ personne.rue }}
+        </div>
+    </div>
+    </div>
+
+    <div <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                {{ personne.codePostal}} {{ personne.ville }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                Mail : {{ personne.mail }}
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                Prix de la location: {{ tarif[0].bureau1mois }} € par mois.
+            </div>
+        </div>
+
+        <hr class="double">
+
+        <section class="facturation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                            <h3>Facturation</h3>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                    {{ form_start(formFacturation)}}
+                    {{ form_row(formFacturation.payerAvantLe, { 'label': 'Payer avant le', 'attr': {'placeholder' :""}})}}
+                </div>
+            </div>
+
+            <div class="espace2"></div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                    {{ form_row(formFacturation.dateFacturation, { 'label': 'Date du paiement', 'attr': {'placeholder' : "Prénom"}})}}
+                </div>
+            </div>
+
+            <div class="espace2"></div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+
+                    {{ form_row(formFacturation.quantite, { 'label': 'Nombre de mois a payer', 'attr': {'placeholder' : "1 / 2 ou 3 par exemple"}})}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                    {{ form_row(formFacturation.designation, { 'label': 'Nommer les mois facturés', 'attr': {'placeholder' : "Mars / Mars et Avril par ex"}})}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+
+                    {{ form_row(formFacturation.montantTtc, { 'label': 'Montant TTC', 'attr': {'placeholder' : ""}})}}
+                </div>
+            </div>
+
+      
+
+
+            <div class="espace2"></div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+                    <a href="{{ path('lireFacture', {'id':personne.idPersonne})}}"><button class="btn btn-primary onglet2" type="submit"> Acceder à la facture </button></a>
+                </div>
+                      {{ form_end(formFacturation)}}
+            </div>
+        </section>
+    </div>
+
+    
+
+
+
+
+    <div class='espace2'></div>
+
+    {% endblock %}

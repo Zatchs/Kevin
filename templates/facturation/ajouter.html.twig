@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter/Modifier un utlisateur{% endblock %}
+
+
+{% block body %}
+
+
+<h1 class="titreCreation">
+{% if editMode %}
+            Modifier un utilisateur
+            {% else %}
+            Ajouter un utilisateur
+            {% endif %}
+ </h1>
+
+ 
+
+<div class="espace2"></div>
+
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+
+        {{ form_start(formPersonne)}}
+        <div class="form-group creation">
+            {{ form_row(formPersonne.nom, { 'label': 'Nom', 'attr': {'placeholder' : "Nom de la personne"}})}}
+        </div>
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+        <div class="form-group creation">
+            {{ form_row(formPersonne.prenom, { 'label': 'Prenom', 'attr': {'placeholder' : "Prénom"}})}}
+        </div>
+    </div>
+</div>
+
+<hr class="separation">
+
+<div <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.numeroRue, {'label': 'N° rue', 'attr': {'placeholder' : "Numero de rue"}})}}
+            </div>
+        </div>
+
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.rue, { 'label': 'Rue', 'attr': {'placeholder' : "rue"}})}}
+            </div>
+        </div>
+    </div>
+
+    <hr class="separation">
+
+    <div class="row">
+
+
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.ville, { 'label': 'Ville', 'attr': {'placeholder' : "ville"}})}}
+            </div>
+        </div>
+
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.codePostal, {'label': 'Code Postal :', 'attr': {'placeholder' : "Code Postal"}})}}
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="separation">
+
+    <div class="row">
+
+
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.mail, {'label': 'Mail', 'attr': {'placeholder' : "Ajouter le Mail"}})}}
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.societe, {'label': 'Societe', 'attr': {'placeholder' : "Nom de la societe"}})}}
+            </div>
+        </div>
+    </div>
+
+    <hr class="separation">
+
+    <div class="row">
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.codeBadge, {'label': 'CodeBadge', 'attr': {'placeholder' : "Numero du badge"}})}}
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 align-self-center">
+            <div class="form-group creation">
+                {{ form_row(formPersonne.idStatus, {'label': '1= Incubé // 2= Non-adh // 3= Adh', 'attr': {'placeholder' : "Type  de statut"}})}}
+            </div>
+        </div>
+    </div>
+
+    <hr class="separation">
+
+    <div class="espace"></div>
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 align-self-center">
+            <button class="btn btn-primary onglet2" type="submit">
+            {% if editMode %}
+            Sauvegarder les modifications
+            {% else %}
+            Ajouter un utilisateur
+            {% endif %}
+            </button>
+            {{ form_end(formPersonne)}}
+        </div>
+    </div>
+
+</div>
+
+<div class="espace"></div>
+
+<h1 class="titreCreation"> </h1>
+
+{% endblock %}
